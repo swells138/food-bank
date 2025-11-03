@@ -42,7 +42,8 @@ export default function Header({ site }) {
     <header
       className={clsx(
         'sticky top-0 z-40 w-full border-b border-transparent bg-surface/95 backdrop-blur',
-        scrolled ? 'border-ink/10 shadow-header' : ''
+        scrolled ? 'border-ink/10 shadow-header' : '',
+        'relative'
       )}
     >
       <Container className="flex items-center justify-between gap-4 py-4">
@@ -93,13 +94,13 @@ export default function Header({ site }) {
       <div
         id="mobile-menu"
         className={clsx(
-          'lg:hidden',
+          'absolute inset-x-0 top-full lg:hidden',
           open ? 'pointer-events-auto' : 'pointer-events-none'
         )}
       >
         <div
           className={clsx(
-            'bg-surface/98 px-4 pb-6 pt-2 text-base shadow-lg shadow-ink/10 transition-transform',
+            'max-h-[calc(100vh-5rem)] overflow-y-auto bg-surface/98 px-4 pb-6 pt-2 text-base shadow-lg shadow-ink/10 transition-transform',
             open ? 'translate-y-0' : '-translate-y-full'
           )}
         >
