@@ -11,7 +11,7 @@ export function IconCircle({ children }) {
 
 export default function IconRow({ items = [], className }) {
   return (
-    <div className={clsx('grid gap-6 md:grid-cols-3', className)}>
+    <div className={clsx('grid gap-6 sm:grid-cols-2 md:grid-cols-3', className)}>
       {items.map((item) => (
         <div key={item.title} className="flex items-start gap-4 rounded-2xl bg-muted/70 p-5">
           <IconCircle>{item.icon}</IconCircle>

@@ -70,7 +70,7 @@ export default async function AboutPage() {
         title="Our mission"
         subtitle="We provide food, emergency assistance, and compassionate support to anyone in North Ridgeville facing hardship."
       >
-        <Container className="grid gap-8 lg:grid-cols-2">
+        <Container className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4 text-lg text-ink/75">
             <p>
               Guided by generous donors and more than 200 volunteers each year, we serve hundreds of families through weekly pantry distributions, Soup for the Spirit meals, and seasonal assistance programs.
@@ -96,7 +96,7 @@ export default async function AboutPage() {
       </Section>
 
       <Section eyebrow="Timeline" title="A story of neighbors helping neighbors">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {timeline.map((milestone) => (
             <Card key={milestone.year} title={`${milestone.year} – ${milestone.title}`}>
               <p className="text-sm text-ink/70">{milestone.description}</p>
@@ -110,7 +110,7 @@ export default async function AboutPage() {
         title="Powered by our partners"
         subtitle="We are grateful for churches, businesses, schools, and civic leaders who keep shelves stocked and programs thriving."
       >
-        <Container className="grid gap-6 lg:grid-cols-2">
+        <Container className="grid gap-6 md:grid-cols-2">
           <Card title="Community partners">
             <ul className="space-y-2 text-sm text-ink/70">
               {partners.map((partner) => (

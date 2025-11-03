@@ -45,7 +45,7 @@ export default async function VolunteerPage() {
         title="High-impact volunteer opportunities"
         subtitle="Let us know what interests you. We’ll reach out to set up a tour and training."
       >
-        <Container className="grid gap-6 lg:grid-cols-3">
+        <Container className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {volunteer.roles.map((role) => (
             <Card key={role.title} title={role.title} eyebrow={role.time}>
               <p className="text-sm text-ink/70">{role.desc}</p>
@@ -59,7 +59,7 @@ export default async function VolunteerPage() {
         title="Tell us you’re interested"
         subtitle="We’ll send you a welcome packet, background check information if required, and upcoming training dates."
       >
-        <Container className="grid gap-8 lg:grid-cols-[3fr_2fr]">
+        <Container className="grid gap-8 md:grid-cols-[3fr_2fr]">
           <Suspense fallback={<p className="text-sm text-ink/60">Loading form…</p>}>
             <VolunteerForm email={volunteer.cta.email} subject={volunteer.cta.subject} />
           </Suspense>

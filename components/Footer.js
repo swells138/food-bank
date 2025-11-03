@@ -7,7 +7,7 @@ export default function Footer({ site }) {
 
   return (
     <footer className="border-t border-ink/10 bg-muted/60 py-12 text-sm">
-      <Container className="grid gap-10 md:grid-cols-4">
+      <Container className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
           <p className="text-lg font-semibold text-ink">{name}</p>
           <p className="text-ink/70">{address}</p>
@@ -26,9 +26,12 @@ export default function Footer({ site }) {
           <h3 className="font-semibold uppercase tracking-wide text-ink">Hours</h3>
           <ul className="mt-3 space-y-1 text-ink/70">
             {hours?.map((hour) => (
-              <li key={hour.day} className="flex justify-between gap-4">
-                <span>{hour.day}</span>
-                <span>
+              <li
+                key={hour.day}
+                className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+              >
+                <span className="font-medium text-ink">{hour.day}</span>
+                <span className="text-ink/70">
                   {hour.open} – {hour.close}
                 </span>
               </li>
