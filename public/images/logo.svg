@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">North Ridgeville Community Care logo</title>
+  <desc id="desc">Circular emblem with initials NR</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#20A37F" />
+      <stop offset="100%" stop-color="#205CC5" />
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="75" fill="url(#grad)" />
+  <circle cx="80" cy="80" r="68" fill="#fff" opacity="0.85" />
+  <path d="M50 110V50h18l22 30h0.5V50h19v60h-18l-22-30h-0.5v30H50z" fill="#205CC5" />
+  <path d="M86 110V50h24c13 0 22 8 22 20 0 9-6 16-14 18l16 22h-21l-13-20h-0.5v20H86zm19-33h4c4 0 7-3 7-7s-3-7-7-7h-4v14z" fill="#20A37F" opacity="0.9" />
+</svg>

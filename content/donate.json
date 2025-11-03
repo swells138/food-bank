@@ -1,0 +1,14 @@
+{
+  "portals": [
+    { "label": "Donate Online", "url": "(TODO: external donation URL)" },
+    { "label": "Monthly Giving", "url": "(TODO)" },
+    { "label": "Mail a Check", "url": "(TODO)" }
+  ],
+  "copy": {
+    "why": "Your gift keeps shelves stocked and families supported.",
+    "impact": "Every $25 provides (est.) X meals.",
+    "matching": "Ask your employer about matching gifts.",
+    "recurring": "Monthly supporters help us plan ahead for busy seasons.",
+    "corporate": "Businesses can sponsor program nights or host food drives."
+  }
+}

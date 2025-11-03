@@ -1,0 +1,23 @@
+{
+  "name": "North Ridgeville Community Care",
+  "tagline": "Neighbors helping neighbors with food, care, and compassion.",
+  "address": "(TODO: street, North Ridgeville, OH)",
+  "phone": "(TODO)",
+  "email": "(TODO)",
+  "hours": [
+    { "day": "Mon", "open": "10:00", "close": "16:00" },
+    { "day": "Tue", "open": "10:00", "close": "16:00" },
+    { "day": "Wed", "open": "10:00", "close": "16:00" },
+    { "day": "Thu", "open": "10:00", "close": "18:00" },
+    { "day": "Fri", "open": "10:00", "close": "14:00" }
+  ],
+  "social": {
+    "facebook": "(TODO)",
+    "instagram": "(TODO)"
+  },
+  "impact": [
+    { "label": "Families served/month", "value": 350 },
+    { "label": "Meals provided/year", "value": 120000 },
+    { "label": "Volunteer hours", "value": 4800 }
+  ]
+}

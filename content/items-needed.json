@@ -1,0 +1,20 @@
+{
+  "food": [
+    { "name": "Canned soup", "urgent": true },
+    { "name": "Peanut butter", "urgent": true },
+    { "name": "Cereal", "urgent": false },
+    { "name": "Pasta", "urgent": false },
+    { "name": "Rice", "urgent": false },
+    { "name": "Canned vegetables", "urgent": false }
+  ],
+  "personalCare": [
+    { "name": "Toothpaste", "urgent": true },
+    { "name": "Shampoo", "urgent": false },
+    { "name": "Deodorant", "urgent": false }
+  ],
+  "household": [
+    { "name": "Paper towels", "urgent": false },
+    { "name": "Laundry detergent", "urgent": true },
+    { "name": "Dish soap", "urgent": false }
+  ]
+}

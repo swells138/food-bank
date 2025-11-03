@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "food-pantry",
+    "title": "Food Pantry",
+    "short": "Weekly distribution of groceries for local families.",
+    "details": "(TODO: fuller description including who qualifies and what to bring)",
+    "eligibility": "(TODO)",
+    "times": "(TODO)"
+  },
+  {
+    "slug": "soup-for-the-spirit",
+    "title": "Soup for the Spirit",
+    "short": "A warm meal and community gathering.",
+    "details": "(TODO)",
+    "eligibility": "(TODO)",
+    "times": "(TODO)"
+  },
+  {
+    "slug": "holiday-meals",
+    "title": "Holiday Meal Baskets",
+    "short": "Seasonal produce and staples for Thanksgiving and winter holidays.",
+    "details": "(TODO)",
+    "eligibility": "(TODO)",
+    "times": "(TODO)"
+  }
+]

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">Neighbors sharing food at a community pantry</title>
+  <desc id="desc">Illustrated volunteers handing a grocery bag to a smiling neighbor with abstract shapes in the background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4F8FF" />
+      <stop offset="100%" stop-color="#E3F8F1" />
+    </linearGradient>
+    <linearGradient id="bag" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#205CC5" />
+      <stop offset="100%" stop-color="#1CA37F" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg)" />
+  <circle cx="780" cy="150" r="80" fill="#205CC5" opacity="0.18" />
+  <circle cx="200" cy="560" r="120" fill="#1CA37F" opacity="0.12" />
+  <path d="M120 520c60-120 220-220 360-220s300 100 360 220" fill="#205CC5" opacity="0.08" />
+  <g transform="translate(220 240)">
+    <path d="M150 260c0-40 18-72 54-72s54 32 54 72v90h-108Z" fill="#1F2A44" opacity="0.15" />
+    <path d="M318 150c24 0 44 20 44 44v162c0 10-8 18-18 18h-116c-10 0-18-8-18-18v-162c0-24 20-44 44-44h64Z" fill="#205CC5" />
+    <path d="M272 94a58 58 0 0 1 58 58v10c0 26-21 47-47 47h-22c-26 0-47-21-47-47v-10a58 58 0 0 1 58-58Z" fill="#1F2A44" />
+    <path d="M260 198h48v64h-48z" fill="#fff" opacity="0.85" />
+  </g>
+  <g transform="translate(420 260)">
+    <rect x="24" y="60" width="200" height="180" rx="26" fill="#fff" opacity="0.9" />
+    <path d="M72 60h104v-12a52 52 0 0 0-104 0v12Z" fill="#1F2A44" />
+    <path d="M64 236h120c10 0 18 8 18 18v40H46v-40c0-10 8-18 18-18Z" fill="#205CC5" />
+    <path d="M46 294h156v32a34 34 0 0 1-34 34h-88a34 34 0 0 1-34-34v-32Z" fill="#1CA37F" />
+    <circle cx="124" cy="30" r="30" fill="#F9A13B" />
+  </g>
+  <g transform="translate(170 340)">
+    <path d="M120 120h140l-28 120H148Z" fill="#1CA37F" />
+    <path d="M120 120s-18-52 24-68 72 20 72 20l18 48Z" fill="#F9A13B" />
+    <path d="M202 60c0 32-26 58-58 58s-58-26-58-58 26-58 58-58 58 26 58 58Z" fill="#1F2A44" />
+    <path d="M110 120h140l-42 68h-96Z" fill="url(#bag)" />
+    <circle cx="160" cy="40" r="18" fill="#fff" opacity="0.9" />
+  </g>
+</svg>
