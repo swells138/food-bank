@@ -80,15 +80,7 @@ export default async function Home() {
               From sorting donations to greeting guests, every volunteer shifts the load and brightens someone’s day.
             </p>
           </Card>
-          <Card
-            title="Deliver donations"
-            eyebrow="Drop-off locations"
-            footer={<Button href="/hours-and-contact" variant="secondary">Plan your visit</Button>}
-          >
-            <p>
-              Bring shelf-stable food and personal care items during open hours or schedule a group drive with our team.
-            </p>
-          </Card>
+         
         </div>
       </Section>
 
@@ -101,13 +93,7 @@ export default async function Home() {
         <ItemsGrid limit={9} showCategoryLabels={false} />
       </Section>
 
-      <Section
-        eyebrow="Impact"
-        title="Our neighbors count on your kindness"
-        subtitle="Together with donors, volunteers, and partners, we provide consistent support for families all year long."
-      >
-        <StatsRow stats={impact} />
-      </Section>
+      
 
       <Section
         eyebrow="Programs"

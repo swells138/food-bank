@@ -2,25 +2,81 @@
   {
     "slug": "food-pantry",
     "title": "Food Pantry",
-    "short": "Weekly distribution of groceries for local families.",
-    "details": "(TODO: fuller description including who qualifies and what to bring)",
-    "eligibility": "(TODO)",
-    "times": "(TODO)"
+    "short": "Complete and balanced meals for all persons in the home.",
+    "details": "Part of our facility is our food pantry which provides complete and balanced meals to our clients with sufficient food to accommodate all persons living in the home. It is our philosophy that regardless of parental lifestyle, if there are planned meals in the home the children will not go hungry and may also benefit in other ways from the familial value of an organized mealtime. If someone is in immediate need of food and they are not one of our pre-approved clients, our policy is to give them \"emergency food\" from the food pantry and have them complete an application form for future needs.",
+    "eligibility": "Available to approved clients based on household size and income guidelines.",
+    "times": ""
   },
   {
-    "slug": "soup-for-the-spirit",
-    "title": "Soup for the Spirit",
-    "short": "A warm meal and community gathering.",
-    "details": "(TODO)",
-    "eligibility": "(TODO)",
-    "times": "(TODO)"
+    "slug": "clothing-and-household-items",
+    "title": "Clothing and Household Items",
+    "short": "Gently used clothing and household items available daily.",
+    "details": "We provide our clients with gently used clothing, laundered by our volunteers, and made available on a daily basis. The clothing is donated by persons in our community. Household items are also donated, and special needs are met whenever possible such as requests for beds, cribs, household furniture, etc.",
+    "eligibility": "Available to approved clients at no cost.",
+    "times": ""
   },
   {
-    "slug": "holiday-meals",
-    "title": "Holiday Meal Baskets",
-    "short": "Seasonal produce and staples for Thanksgiving and winter holidays.",
-    "details": "(TODO)",
-    "eligibility": "(TODO)",
-    "times": "(TODO)"
+    "slug": "utility-and-housing-assistance",
+    "title": "Utility and Housing Assistance",
+    "short": "Assistance with utility and rent/mortgage payments.",
+    "details": "To help clients maintain reasonable living accommodations, we assist with utility and rent/mortgage payments. When a client requests assistance, we can send the necessary funds directly to utility companies and/or landlords to ease the economic burden many families face.",
+    "eligibility": "Available to approved clients; assistance based on need and available funding.",
+    "times": ""
+  },
+  {
+    "slug": "summer-lunches",
+    "title": "Summer Lunches",
+    "short": "Five lunches per week for school-age children when school is out.",
+    "details": "Five lunches per week are offered for school-age children who have been on a government funded school program which ends with the school year. Their eligibility is qualified by the North Ridgeville City Schools. Food is purchased in bulk and then packaged and distributed by volunteers.",
+    "eligibility": "For children who were enrolled in a government-funded school meal program; eligibility confirmed by North Ridgeville City Schools.",
+    "times": "Seasonal program during summer; see current schedule."
+  },
+  {
+    "slug": "school-supplies",
+    "title": "School Supplies",
+    "short": "Required school supplies for K–12 students.",
+    "details": "Required school supplies are purchased and distributed to school-age children. We believe it is important for all children to begin the school year on an equal footing with their classmates and to better enable them to focus on their studies, dignity intact.",
+    "eligibility": "Available to approved client families.",
+    "times": "Seasonal program prior to the start of the school year."
+  },
+  {
+    "slug": "easter-baskets",
+    "title": "Easter Baskets",
+    "short": "Baskets and Easter dinner supplies for client children and seniors.",
+    "details": "Easter baskets for client children and senior citizens are distributed along with a box of food for Easter dinner, including a ham and eggs for coloring.",
+    "eligibility": "Available to approved client families and seniors.",
+    "times": "Seasonal program prior to Easter."
+  },
+  {
+    "slug": "thanksgiving-baskets",
+    "title": "Thanksgiving Baskets",
+    "short": "Complete Thanksgiving meal baskets including a turkey.",
+    "details": "Each Thanksgiving we receive donations of turkeys and other food items. The week before the holiday, we offer baskets containing an entire meal complete with a turkey.",
+    "eligibility": "Available to approved client families.",
+    "times": "Seasonal program prior to Thanksgiving."
+  },
+  {
+    "slug": "christmas-store-adopt-a-child",
+    "title": "Christmas Store & Adopt-A-Child Program",
+    "short": "Holiday gifts for families through our gift shop and adopt-a-child program.",
+    "details": "Every Christmas we request donations of new gift items—brand new toys, clothes, games, etc. We place all of these items by category in our specially designated \"gift shop\" area and, prior to Christmas, invite our clients to shop (with no money) for their family members and loved ones. We also ask our clients to fill out Wish Lists which we pass on to people in our community who would like to \"adopt\" a child or family for Christmas. Each year we make every effort to ensure that every client with a Wish List receives gifts.",
+    "eligibility": "Available to approved clients.",
+    "times": "Seasonal program prior to Christmas."
+  },
+  {
+    "slug": "essentials",
+    "title": "Essentials",
+    "short": "Personal hygiene and household essentials not covered by Food Stamps.",
+    "details": "We provide items not covered by Food Stamps, including personal hygiene products such as toothpaste, soap, shampoo; laundry detergent and cleaning supplies; and paper products such as paper towels, plastic wrap, aluminum foil, and toilet paper.",
+    "eligibility": "Available to approved clients.",
+    "times": ""
+  },
+  {
+    "slug": "community-care-garden",
+    "title": "Community Care Garden",
+    "short": "Volunteer-led garden providing fresh, in-season produce.",
+    "details": "An amazing group of volunteer men and women from the community work together at a local garden plot to grow produce to donate and distribute to our clients. We are grateful to offer fresh, in-season vegetables.",
+    "eligibility": "Community volunteers welcome; produce is distributed to clients.",
+    "times": "Growing season; see announcements for details."
   }
 ]

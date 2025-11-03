@@ -1,23 +1,35 @@
 {
   "name": "North Ridgeville Community Care",
   "tagline": "Neighbors helping neighbors with food, care, and compassion.",
-  "address": "(TODO: street, North Ridgeville, OH)",
-  "phone": "(TODO)",
-  "email": "(TODO)",
+  "address": "34015 Center Ridge Rd., North Ridgeville, Ohio 44039",
+  "phone": "440-353-9716",
+  "email": "heather@nrcommcare.org",
+  "hoursLabel": "Food Distribution & Donation Hours of Operation",
+  "hoursNote": "We are closed in observance of U.S. holidays and when North Ridgeville City Schools are closed due to inclement weather. If you have an emergency, please leave a message at the center or email Heather at heather@nrcommcare.org.",
   "hours": [
-    { "day": "Mon", "open": "10:00", "close": "16:00" },
-    { "day": "Tue", "open": "10:00", "close": "16:00" },
-    { "day": "Wed", "open": "10:00", "close": "16:00" },
-    { "day": "Thu", "open": "10:00", "close": "18:00" },
-    { "day": "Fri", "open": "10:00", "close": "14:00" }
+    { "day": "Monday",   "open": "9:30 AM", "close": "1:30 PM" },
+    { "day": "Tuesday",  "open": "9:30 AM", "close": "1:30 PM" },
+    { "day": "Thursday", "open": "3:00 PM", "close": "6:00 PM" }
   ],
   "social": {
-    "facebook": "(TODO)",
-    "instagram": "(TODO)"
+    "facebook": "",
+    "instagram": ""
   },
   "impact": [
     { "label": "Families served/month", "value": 350 },
-    { "label": "Meals provided/year", "value": 120000 },
-    { "label": "Volunteer hours", "value": 4800 }
+    { "label": "Meals provided/year",   "value": 120000 },
+    { "label": "Volunteer hours",       "value": 4800 }
+  ],
+  "alerts": [
+    {
+      "type": "warning",
+      "title": "We are in urgent need of food donations",
+      "message": "Any and all food items are appreciated — please consider donating!"
+    },
+    {
+      "type": "info",
+      "title": "Weather & Holiday Closures",
+      "message": "We are closed in observance of U.S. holidays and when North Ridgeville City Schools are closed due to inclement weather."
+    }
   ]
 }

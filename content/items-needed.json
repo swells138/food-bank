@@ -1,20 +1,16 @@
 {
   "food": [
-    { "name": "Canned soup", "urgent": true },
-    { "name": "Peanut butter", "urgent": true },
-    { "name": "Cereal", "urgent": false },
-    { "name": "Pasta", "urgent": false },
-    { "name": "Rice", "urgent": false },
-    { "name": "Canned vegetables", "urgent": false }
+    { "name": "Any and all nonperishable food items", "urgent": true, "notes": "High need" }
   ],
   "personalCare": [
-    { "name": "Toothpaste", "urgent": true },
-    { "name": "Shampoo", "urgent": false },
-    { "name": "Deodorant", "urgent": false }
+    { "name": "Shampoo/Conditioner", "urgent": true },
+    { "name": "Deodorant", "urgent": true },
+    { "name": "Hand Soap", "urgent": true }
   ],
   "household": [
-    { "name": "Paper towels", "urgent": false },
-    { "name": "Laundry detergent", "urgent": true },
-    { "name": "Dish soap", "urgent": false }
+    { "name": "Laundry Detergent", "urgent": true },
+    { "name": "Fabric Softener", "urgent": true },
+    { "name": "Bleach", "urgent": true },
+    { "name": "Household Cleaners", "urgent": true }
   ]
 }
