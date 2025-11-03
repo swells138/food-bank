@@ -5,7 +5,7 @@ import Container from './Container';
 export default function Hero({ title, subtitle, ctaPrimary, ctaSecondary, imageSrc }) {
   return (
     <section className="bg-surface">
-      <Container className="grid items-center gap-12 pb-16 pt-12 lg:grid-cols-2 lg:py-20">
+      <Container className="grid items-center gap-12 pb-16 pt-12 md:grid-cols-2 md:py-16 lg:py-20">
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Neighbors helping neighbors</p>
           <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">{title}</h1>

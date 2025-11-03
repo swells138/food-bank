@@ -61,7 +61,7 @@ export default async function Home() {
         title="How you can make an immediate difference"
         subtitle="Every gift of time, food, or funds keeps our shelves stocked and our doors open to neighbors who rely on us."
       >
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card
             title="Give today"
             eyebrow="Donate"
@@ -101,7 +101,7 @@ export default async function Home() {
         subtitle="Here’s a quick look at what we offer. Explore them all or share with a neighbor who could benefit."
         actions={<Button href="/programs">All programs</Button>}
       >
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {programs.map((program) => (
             <Card key={program.slug} title={program.title} eyebrow="Community support">
               <p className="text-sm text-ink/70">{program.short}</p>
@@ -119,7 +119,7 @@ export default async function Home() {
         subtitle="We’re located in the heart of North Ridgeville with easy parking and a welcoming lobby."
         actions={<Button href="/hours-and-contact">Hours & directions</Button>}
       >
-        <Container className="grid gap-10 lg:grid-cols-2">
+        <Container className="grid gap-10 md:grid-cols-2">
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-ink">{site.address}</h3>
             <p className="text-ink/70">

@@ -29,7 +29,7 @@ export default async function DonatePage() {
         title="Choose the way you give"
         subtitle="Online gifts are the fastest way to help. Prefer to mail a check or give in person? Call us at the number below and we’ll assist."
       >
-        <Container className="grid gap-6 lg:grid-cols-3">
+        <Container className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {donate.portals.map((portal) => (
             <Card key={portal.label} title={portal.label}>
               <p className="text-sm text-ink/70">{donate.copy.why}</p>
@@ -51,7 +51,7 @@ export default async function DonatePage() {
         title="Your generosity in action"
         subtitle="We steward every donation carefully and keep administrative costs low."
       >
-        <Container className="grid gap-6 lg:grid-cols-2">
+        <Container className="grid gap-6 md:grid-cols-2">
           <Card title="Where funds go">
             <ul className="space-y-2 text-sm text-ink/70">
               <li>Food purchases to supplement donated items</li>

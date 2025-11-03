@@ -42,7 +42,7 @@ export default async function HoursAndContactPage() {
         title="Hours and directions"
         subtitle="Visit us during open pantry hours or schedule an appointment for assistance."
       >
-        <Container className="grid gap-8 lg:grid-cols-[2fr_3fr]">
+        <Container className="grid gap-8 md:grid-cols-[2fr_3fr]">
           <Card title="Visit us" eyebrow="Location">
             <p className="text-sm text-ink/70">{site.address}</p>
 
@@ -98,7 +98,7 @@ export default async function HoursAndContactPage() {
       </Section>
 
       <Section eyebrow="Before you visit" title="How to get help">
-        <Container className="grid gap-8 lg:grid-cols-2">
+        <Container className="grid gap-8 md:grid-cols-2">
           <Card title="Steps for new clients">
             <ol className="space-y-3 text-sm text-ink/70">
               {steps.map((step, index) => (
@@ -125,7 +125,7 @@ export default async function HoursAndContactPage() {
       </Section>
 
       <Section eyebrow="Contact" title="Send us a message">
-        <Container className="grid gap-8 lg:grid-cols-[3fr_2fr]">
+        <Container className="grid gap-8 md:grid-cols-[3fr_2fr]">
           <ContactForm email={site.email} subject="Pantry Question" />
 
          
