@@ -1,0 +1,21 @@
+{
+  "roles": [
+    { "title": "Pantry Assistant", "time": "3 hrs/week", "desc": "Sort donations, pack boxes, assist clients." },
+    { "title": "Driver", "time": "As needed", "desc": "Pick up donations from local partners." },
+    { "title": "Front Desk Greeter", "time": "2 hrs/shift", "desc": "Welcome clients, answer questions, and schedule visits." }
+  ],
+  "cta": {
+    "email": "(TODO)",
+    "subject": "Volunteer Interest – NR Community Care"
+  },
+  "faqs": [
+    {
+      "question": "Do I need training?",
+      "answer": "Yes, we provide an orientation and shadow shift before your first solo volunteer day."
+    },
+    {
+      "question": "Can groups volunteer together?",
+      "answer": "Absolutely! We host corporate, faith, and school groups. Contact us to reserve a date."
+    }
+  ]
+}

@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# North Ridgeville Community Care Website
 
-## Getting Started
+A modern, mobile-first Next.js site for North Ridgeville Community Care. Content is stored in local JSON files so staff can keep copy, hours, and donation needs up to date without touching code.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000> to view the site. Edits in the `app/` and `components/` directories support hot reloading.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Updating content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Editable copy, hours, and calls-to-action live in the `/content` directory:
 
-## Learn More
+- `site.json` — organization name, tagline, address, phone, email, hours, and social links
+- `items-needed.json` — categorized pantry needs with `urgent: true` flags
+- `programs.json` — program descriptions and eligibility notes
+- `donate.json` — donation portal URLs and key messaging
+- `volunteer.json` — volunteer roles, CTAs, and FAQs
 
-To learn more about Next.js, take a look at the following resources:
+Adjust these JSON files to update the live site. Keep placeholders marked with `(TODO)` until real information is ready.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Images
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Replace the placeholder images in `public/images/` with optimized JPG or PNG assets sized for responsive layouts. Keep file names the same or update references in components. Use compressed images (<250 KB when possible) for faster loads.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy to [Vercel](https://vercel.com/) or any Node.js host:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Commit your changes and push to GitHub.
+2. Connect the repository to Vercel and select the default build command `npm run build`.
+3. Set the optional analytics environment variable `NEXT_PUBLIC_GA_ID` if using Google Analytics.
+4. Configure a production domain and redeploy when JSON content changes.
+
+## Accessibility & performance notes
+
+- Semantic HTML, focus states, and keyboard navigation are built in via Tailwind CSS.
+- The `Items Needed` page includes print-friendly styles.
+- API routes at `/api/contact` and `/api/volunteer` accept form submissions with a `202 Accepted` placeholder response for future integrations.
+
+Happy editing!
