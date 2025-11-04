@@ -8,7 +8,10 @@ export default function AlertBanner({ urgentItem }) {
   }
 
   return (
-    <div className="border-b border-primary/20 bg-primary/5 py-3 text-sm text-primary">
+    <div
+      id="alert-banner"
+      className="border-b border-primary/20 bg-primary/5 py-3 text-sm text-primary"
+    >
       <Container className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Badge variant="accent">Urgent Need</Badge>
