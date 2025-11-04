@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import { createPortal } from 'react-dom';
 import Button from './Button';
 import Container from './Container';
 
@@ -17,20 +18,89 @@ const navLinks = [
   { href: '/volunteer', label: 'Volunteer' },
 ];
 
+function MobileMenuPortal({ open, onClose }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  // lock scroll while open
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    if (open) document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [open]);
+
+  if (!mounted || !open) return null;
+
+  const overlay = (
+    <div
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      className="fixed inset-0 z-[2147483647] md:hidden"
+    >
+      {/* Opaque background that blocks everything */}
+      <div className="absolute inset-0 bg-surface" aria-hidden="true" />
+
+      {/* Close button — fixed position, large tap area */}
+      <button
+        className="fixed right-3 top-3 z-[2147483647] h-12 w-12 rounded-full border border-ink/10 bg-surface/90 text-ink shadow-sm backdrop-blur
+                   hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface
+                   touch-manipulation"
+        onClick={onClose}
+        aria-label="Close menu"
+        style={{
+          WebkitTapHighlightColor: 'transparent',
+          transform: 'translateZ(0)', // prevents weird tap offset on iOS
+        }}
+      >
+        <svg
+          className="mx-auto h-6 w-6 pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      {/* Menu content */}
+      <div className="relative z-[2147483647] mx-auto flex h-full w-full max-w-7xl flex-col px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+        <nav className="flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-ink/90 hover:text-primary"
+              onClick={onClose}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Button href="/donate" className="mt-4 w-full" onClick={onClose}>
+            Donate
+          </Button>
+          <Button href="/hours-and-contact" variant="secondary" className="w-full" onClick={onClose}>
+            Get Help
+          </Button>
+        </nav>
+      </div>
+    </div>
+  );
+
+  return createPortal(overlay, document.body);
+}
+
+
 export default function Header({ site }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const headerRef = useRef(null);
-  const [headerHeight, setHeaderHeight] = useState(0);
-  const [bannerHeight, setBannerHeight] = useState(0);
   const pathname = usePathname();
 
-  // Close the sheet on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  useEffect(() => setOpen(false), [pathname]); // close when route changes
 
-  // Scroll state for subtle shadow/border
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -38,69 +108,11 @@ export default function Header({ site }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll when menu is open (iOS friendly)
-  useEffect(() => {
-    const { body } = document;
-    if (!body) return;
-    if (open) {
-      const prev = body.style.overflow;
-      body.style.overflow = 'hidden';
-      return () => {
-        body.style.overflow = prev;
-      };
-    }
-  }, [open]);
-
-  // Track header height via ResizeObserver
-  useEffect(() => {
-    if (!headerRef.current) return;
-
-    const updateHeight = () => setHeaderHeight(headerRef.current?.offsetHeight || 0);
-    updateHeight();
-
-    let ro;
-    if (typeof ResizeObserver !== 'undefined') {
-      ro = new ResizeObserver(() => updateHeight());
-      ro.observe(headerRef.current);
-    }
-
-    window.addEventListener('resize', updateHeight);
-    return () => {
-      window.removeEventListener('resize', updateHeight);
-      ro?.disconnect();
-    };
-  }, []);
-
-  // Optional alert banner support
-  useEffect(() => {
-    const el = () => document.getElementById('alert-banner');
-    const update = () => setBannerHeight(el()?.offsetHeight || 0);
-    update();
-
-    const node = el();
-    let ro;
-    if (node && typeof ResizeObserver !== 'undefined') {
-      ro = new ResizeObserver(update);
-      ro.observe(node);
-    }
-
-    window.addEventListener('resize', update);
-    return () => {
-      window.removeEventListener('resize', update);
-      ro?.disconnect();
-    };
-  }, []);
-
-  const offset = headerHeight + bannerHeight;
-
   return (
     <header
-      ref={headerRef}
-      style={{ ['--offset'] : `${offset}px` }}
       className={clsx(
         'sticky top-0 z-40 w-full border-b border-transparent bg-surface/95 backdrop-blur',
-        scrolled && 'border-ink/10 shadow-header',
-        'relative'
+        scrolled && 'border-ink/10 shadow-header'
       )}
     >
       <Container className="flex flex-col gap-3 py-3 sm:gap-4 sm:py-4">
@@ -114,7 +126,7 @@ export default function Header({ site }) {
           </Link>
 
           {/* Desktop nav */}
-          <div className="!hidden items-center gap-6 md:!flex nav-desktop">
+          <div className="!hidden items-center gap-6 md:!flex">
             <nav className="flex items-center gap-6 text-sm font-medium text-ink/80">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="hover:text-primary">
@@ -124,17 +136,15 @@ export default function Header({ site }) {
             </nav>
             <div className="flex items-center gap-3">
               <Button href="/donate">Donate</Button>
-              <Button href="/hours-and-contact" variant="secondary">
-                Get Help
-              </Button>
+              <Button href="/hours-and-contact" variant="secondary">Get Help</Button>
             </div>
           </div>
 
           {/* Mobile trigger */}
           <button
             type="button"
-            className="rounded-full border border-ink/10 p-2 text-ink transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface md:hidden z-50"
-            onClick={() => setOpen((v) => !v)}
+            className="md:hidden rounded-full border border-ink/10 p-2 text-ink transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface z-50"
+            onClick={() => setOpen(v => !v)}
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Toggle menu"
@@ -156,48 +166,8 @@ export default function Header({ site }) {
         </div>
       </Container>
 
-      {/* Backdrop */}
-      <div
-        className={clsx(
-          'fixed inset-0 z-30 bg-black/40 backdrop-blur-sm transition-opacity md:!hidden',
-          open ? 'opacity-100' : 'pointer-events-none opacity-0'
-        )}
-        onClick={() => setOpen(false)}
-        aria-hidden="true"
-      />
-
-      {/* Sheet panel */}
-      <div
-        id="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        className={clsx(
-          'md:!hidden fixed inset-x-0 z-40 nav-mobile',
-          open ? 'block' : 'hidden'
-        )}
-        style={{ top: 'var(--offset)', height: 'calc(100dvh - var(--offset))' }}
-      >
-        <div className="h-full overflow-y-auto bg-surface px-4 pb-8 pt-3 text-base shadow-lg shadow-ink/10">
-          <nav className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-ink/90 hover:text-primary"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button href="/donate" className="w-full" onClick={() => setOpen(false)}>
-              Donate
-            </Button>
-            <Button href="/hours-and-contact" variant="secondary" className="w-full" onClick={() => setOpen(false)}>
-              Get Help
-            </Button>
-          </nav>
-        </div>
-      </div>
+      {/* Render the overlay OUTSIDE the header via portal */}
+      <MobileMenuPortal open={open} onClose={() => setOpen(false)} />
     </header>
   );
 }
