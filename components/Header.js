@@ -111,50 +111,62 @@ export default function Header({ site }) {
         'relative'
       )}
     >
-      <Container className="flex items-center justify-between gap-4 py-4">
-        <Link href="/" className="flex items-center gap-3" aria-label={`${site.name} home`}>
-          <Image src="/images/logo.svg" alt="NR Community Care logo" width={48} height={48} />
-          <div className="hidden text-left sm:block">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">{site.tagline}</p>
-            <p className="text-lg font-semibold text-ink">{site.name}</p>
+      <Container className="flex flex-col gap-3 py-3 sm:gap-4 sm:py-4">
+        <div className="flex w-full items-center justify-between gap-4">
+          <Link href="/" className="flex items-center gap-3" aria-label={`${site.name} home`}>
+            <Image src="/images/logo.svg" alt="NR Community Care logo" width={48} height={48} />
+            <div className="text-left">
+              <p className="text-base font-semibold leading-tight text-ink sm:text-lg">{site.name}</p>
+              <p className="hidden text-xs font-semibold uppercase tracking-wide text-primary sm:block">{site.tagline}</p>
+            </div>
+          </Link>
+          <div className="hidden items-center gap-6 lg:flex">
+            <nav className="flex items-center gap-6 text-sm font-medium text-ink/80">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:text-primary">
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="flex items-center gap-3">
+              <Button href="/donate">Donate</Button>
+              <Button href="/hours-and-contact" variant="secondary">
+                Get Help
+              </Button>
+            </div>
           </div>
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-ink/80 lg:flex">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-primary">
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="hidden items-center gap-3 lg:flex">
-          <Button href="/donate">Donate</Button>
-          <Button href="/hours-and-contact" variant="secondary">
+          <button
+            type="button"
+            className="rounded-full border border-ink/10 p-2 text-ink transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface lg:hidden"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+          >
+            <span className="sr-only">Toggle menu</span>
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+            >
+              {open ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              )}
+            </svg>
+          </button>
+        </div>
+        <div className="flex w-full gap-2 sm:hidden">
+          <Button href="/donate" size="sm" className="flex-1">
+            Donate
+          </Button>
+          <Button href="/hours-and-contact" variant="secondary" size="sm" className="flex-1">
             Get Help
           </Button>
         </div>
-        <button
-          type="button"
-          className="lg:hidden"
-          onClick={() => setOpen((value) => !value)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-        >
-          <span className="sr-only">Toggle menu</span>
-          <svg
-            className="h-6 w-6 text-ink"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-          >
-            {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
-            )}
-          </svg>
-        </button>
       </Container>
       <div
         id="mobile-menu"
