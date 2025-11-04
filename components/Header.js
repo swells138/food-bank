@@ -100,7 +100,7 @@ export default function Header({ site }) {
       >
         <div
           className={clsx(
-            'max-h-[calc(100vh-5rem)] overflow-y-auto bg-surface/98 px-4 pb-6 pt-2 text-base shadow-lg shadow-ink/10 transition-transform',
+            'max-h-[calc(100vh-5rem)] overflow-y-auto bg-surface px-4 pb-6 pt-2 text-base shadow-lg shadow-ink/10 transition-transform',
             open ? 'translate-y-0' : '-translate-y-full'
           )}
         >
