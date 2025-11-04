@@ -4,7 +4,12 @@ import Link from 'next/link';
 import clsx from 'clsx';
 
 const baseStyles =
-  'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
+  'inline-flex items-center justify-center rounded-full font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
+
+const sizes = {
+  md: 'px-5 py-3 text-sm',
+  sm: 'px-4 py-2 text-sm',
+};
 
 const variants = {
   primary:
@@ -22,9 +27,10 @@ export default function Button({
   children,
   icon: Icon,
   iconPosition = 'trailing',
+  size = 'md',
   ...props
 }) {
-  const styles = clsx(baseStyles, variants[variant], className);
+  const styles = clsx(baseStyles, variants[variant], sizes[size] ?? sizes.md, className);
 
   const content = (
     <span className="flex items-center gap-2">
