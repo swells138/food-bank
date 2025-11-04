@@ -21,6 +21,7 @@ export default function Header({ site }) {
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [bannerHeight, setBannerHeight] = useState(0);
 
   useEffect(() => {
     const onScroll = () => {
@@ -71,6 +72,33 @@ export default function Header({ site }) {
         observer.disconnect();
       }
       window.removeEventListener('resize', updateHeight);
+    };
+  }, []);
+
+  useEffect(() => {
+    const bannerElement = () => document.getElementById('alert-banner');
+
+    const updateBannerHeight = () => {
+      const element = bannerElement();
+      setBannerHeight(element ? element.offsetHeight : 0);
+    };
+
+    updateBannerHeight();
+
+    let observer;
+    const element = bannerElement();
+    if (element && typeof ResizeObserver !== 'undefined') {
+      observer = new ResizeObserver(updateBannerHeight);
+      observer.observe(element);
+    }
+
+    window.addEventListener('resize', updateBannerHeight);
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+      window.removeEventListener('resize', updateBannerHeight);
     };
   }, []);
 
@@ -142,8 +170,8 @@ export default function Header({ site }) {
             open ? 'translate-y-0' : '-translate-y-full'
           )}
           style={{
-            top: headerHeight,
-            maxHeight: `calc(100vh - ${headerHeight}px)`
+            top: headerHeight + bannerHeight,
+            maxHeight: `calc(100vh - ${headerHeight + bannerHeight}px)`,
           }}
         >
           <nav className="flex flex-col gap-4">
