@@ -114,7 +114,7 @@ export default function Header({ site }) {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-6 lg:flex">
+          <div className="!hidden items-center gap-6 md:!flex nav-desktop">
             <nav className="flex items-center gap-6 text-sm font-medium text-ink/80">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} className="hover:text-primary">
@@ -133,7 +133,7 @@ export default function Header({ site }) {
           {/* Mobile trigger */}
           <button
             type="button"
-            className="rounded-full border border-ink/10 p-2 text-ink transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface lg:hidden"
+            className="rounded-full border border-ink/10 p-2 text-ink transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface md:hidden z-50"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -159,7 +159,7 @@ export default function Header({ site }) {
       {/* Backdrop */}
       <div
         className={clsx(
-          'fixed inset-0 z-30 bg-black/40 backdrop-blur-sm transition-opacity lg:hidden',
+          'fixed inset-0 z-30 bg-black/40 backdrop-blur-sm transition-opacity md:!hidden',
           open ? 'opacity-100' : 'pointer-events-none opacity-0'
         )}
         onClick={() => setOpen(false)}
@@ -172,8 +172,8 @@ export default function Header({ site }) {
         role="dialog"
         aria-modal="true"
         className={clsx(
-          'lg:hidden fixed inset-x-0 z-40 translate-y-0 transition-transform duration-200 ease-out',
-          open ? 'translate-y-0' : '-translate-y-full'
+          'md:!hidden fixed inset-x-0 z-40 nav-mobile',
+          open ? 'block' : 'hidden'
         )}
         style={{ top: 'var(--offset)', height: 'calc(100dvh - var(--offset))' }}
       >
