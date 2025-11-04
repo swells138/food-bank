@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -19,6 +19,8 @@ const navLinks = [
 export default function Header({ site }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
     const onScroll = () => {
@@ -38,8 +40,43 @@ export default function Header({ site }) {
     }
   }, [open]);
 
+  useEffect(() => {
+    if (!headerRef.current) return;
+
+    const updateHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    };
+
+    updateHeight();
+
+    let observer;
+
+    if (typeof ResizeObserver !== 'undefined') {
+      observer = new ResizeObserver((entries) => {
+        const entry = entries[0];
+        if (entry) {
+          setHeaderHeight(entry.contentRect.height);
+        }
+      });
+
+      observer.observe(headerRef.current);
+    }
+
+    window.addEventListener('resize', updateHeight);
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, []);
+
   return (
     <header
+      ref={headerRef}
       className={clsx(
         'sticky top-0 z-40 w-full border-b border-transparent bg-surface/95 backdrop-blur',
         scrolled ? 'border-ink/10 shadow-header' : '',
@@ -94,15 +131,20 @@ export default function Header({ site }) {
       <div
         id="mobile-menu"
         className={clsx(
-          'absolute inset-x-0 top-full lg:hidden',
+          'lg:hidden',
           open ? 'pointer-events-auto' : 'pointer-events-none'
         )}
+        aria-hidden={!open}
       >
         <div
           className={clsx(
-            'max-h-[calc(100vh-5rem)] overflow-y-auto bg-surface px-4 pb-6 pt-2 text-base shadow-lg shadow-ink/10 transition-transform',
+            'fixed inset-x-0 z-30 overflow-y-auto bg-surface px-4 pb-6 pt-2 text-base shadow-lg shadow-ink/10 transition-transform duration-200 ease-out',
             open ? 'translate-y-0' : '-translate-y-full'
           )}
+          style={{
+            top: headerHeight,
+            maxHeight: `calc(100vh - ${headerHeight}px)`
+          }}
         >
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
