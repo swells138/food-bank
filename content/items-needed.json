@@ -1,16 +1,30 @@
 {
-  "food": [
-    { "name": "Any and all nonperishable food items", "urgent": true, "notes": "High need" }
+  "Food": [
+    { "name": "Any and all nonperishable food items", "urgent": true, "notes": "High need" },
+    { "name": "Canned vegetables", "urgent": true },
+    { "name": "Canned fruit", "urgent": true },
+    { "name": "Rice", "urgent": true }
   ],
-  "personalCare": [
-    { "name": "Shampoo/Conditioner", "urgent": true },
-    { "name": "Deodorant", "urgent": true },
-    { "name": "Hand Soap", "urgent": true }
+  "PersonalCare": [
+    { "name": "Diapers", "urgent": true },
+    { "name": "Feminine hygiene products", "urgent": true },
+    { "name": "Baby Wipes", "urgent": true },
+    { "name": "Band-Aids", "urgent": true },
+    { "name": "Shampoo/Conditoner", "urgent": true },
+    { "name": "Soap/Body Wash", "urgent": true }
   ],
-  "household": [
-    { "name": "Laundry Detergent", "urgent": true },
-    { "name": "Fabric Softener", "urgent": true },
-    { "name": "Bleach", "urgent": true },
-    { "name": "Household Cleaners", "urgent": true }
+  "Household": [
+    { "name": "Napkins", "urgent": false },
+    { "name": "Toilet Paper", "urgent": true },
+    { "name": "Paper Towels", "urgent": true },
+    { "name": "Detergent/Fabric Softener", "urgent": false },
+    { "name": "Bleach", "urgent": false },
+    { "name": "Household Cleaners", "urgent": false }
+  ],
+    "CLothing": [
+    { "name": "Jackets", "urgent": true },
+    { "name": "Winter Hats", "urgent": true },
+    { "name": "Gloves", "urgent": true },
+    { "name": "Socks", "urgent": true }
   ]
 }

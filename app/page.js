@@ -49,7 +49,8 @@ export default async function Home() {
         {JSON.stringify(jsonLd)}
       </Script>
       <Hero
-        title="Helping neighbors thrive with dignity"
+        title="Thank you for supporting Community Care and your North Ridgeville neighbors!
+"
         subtitle="We provide nutritious food, caring connections, and resources for families across North Ridgeville. Join us in meeting urgent needs."
         ctaPrimary={{ label: 'Donate', href: '/donate' }}
         ctaSecondary={{ label: 'Get Help', href: '/hours-and-contact' }}
@@ -137,45 +138,34 @@ export default async function Home() {
               Open in Google Maps
             </Button>
           </div>
-          <IconRow
-            items={[
-              {
-                title: 'Pantry hours',
-                description: site.hours
-                  .map((hour) => `${hour.day}: ${hour.open} – ${hour.close}`)
-                  .join(' • '),
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-6 w-6"
-                  >
-                    <path d="M12 1.75a9.25 9.25 0 1 0 9.25 9.25A9.26 9.26 0 0 0 12 1.75Zm.75 9.94V6.5a.75.75 0 0 0-1.5 0V12a.75.75 0 0 0 .33.62l3.5 2.33a.75.75 0 1 0 .84-1.24Z" />
-                  </svg>
-                ),
-              },
-              {
-                title: 'Curbside donations',
-                description: 'Pull up to the main entrance. Volunteers can help unload weekdays before closing.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                    <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v7.5a2.75 2.75 0 0 1-2.75 2.75h-.5A2.75 2.75 0 0 1 15 19.75h-2a2.75 2.75 0 0 1-2.75-2.75h-.5A2.75 2.75 0 0 1 7 14.25H5.75A2.75 2.75 0 0 1 3 11.5Z" />
-                  </svg>
-                ),
-              },
-              {
-                title: 'Questions?',
-                description: donateCopy.copy?.impact ?? 'Call or email us to talk through how you can help.',
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                    <path d="M12 2a10 10 0 0 0-7.07 17.07l-.84 3a1 1 0 0 0 1.23 1.23l3-.84A10 10 0 1 0 12 2Zm-1 5a1 1 0 1 1 2 0v1.67a1 1 0 0 1-.3.71l-1.4 1.4a1 1 0 0 0-.3.71V12a1 1 0 1 1-2 0v-.8a2 2 0 0 1 .59-1.41L11 8.67Zm1 9.75a1.25 1.25 0 1 1 1.25-1.25A1.25 1.25 0 0 1 12 16.75Z" />
-                  </svg>
-                ),
-              },
-            ]}
-            className="gap-5"
-          />
+          <div className="grid sm:grid-cols-2 gap-6 justify-items-stretch w-full">
+  {/* Card 1 */}
+  <div className="flex flex-col items-start justify-start rounded-2xl bg-muted/30 p-5 shadow-sm w-full h-full">
+    <div className="mb-3 text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M12 1.75a9.25 9.25 0 1 0 9.25 9.25A9.26 9.26 0 0 0 12 1.75Zm.75 9.94V6.5a.75.75 0 0 0-1.5 0V12a.75.75 0 0 0 .33.62l3.5 2.33a.75.75 0 1 0 .84-1.24Z" />
+      </svg>
+    </div>
+    <h4 className="text-lg font-semibold text-ink mb-1">Pantry hours</h4>
+    <p className="text-ink/70 text-sm leading-relaxed">
+      {site.hours.map((hour) => `${hour.day}: ${hour.open} – ${hour.close}`).join(' • ')}
+    </p>
+  </div>
+
+  {/* Card 2 */}
+  <div className="flex flex-col items-start justify-start rounded-2xl bg-muted/30 p-5 shadow-sm w-full h-full">
+    <div className="mb-3 text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v7.5a2.75 2.75 0 0 1-2.75 2.75h-.5A2.75 2.75 0 0 1 15 19.75h-2a2.75 2.75 0 0 1-2.75-2.75h-.5A2.75 2.75 0 0 1 7 14.25H5.75A2.75 2.75 0 0 1 3 11.5Z" />
+      </svg>
+    </div>
+    <h4 className="text-lg font-semibold text-ink mb-1">Curbside donations</h4>
+    <p className="text-ink/70 text-sm leading-relaxed">
+      Pull up to the side entrance. Volunteers can help unload on days the pantry is open.
+    </p>
+  </div>
+</div>
+
         </Container>
       </Section>
     </>
